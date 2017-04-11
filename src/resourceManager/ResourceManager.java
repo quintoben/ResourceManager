@@ -1,6 +1,5 @@
 package resourceManager;
 
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -37,7 +36,7 @@ public abstract class ResourceManager {
 		recycleValue=new ArrayList<Integer>();
 		//initiate the task list
 		for(int i=0;i<taskNumber;i++){
-			taskList.add(new Task(i+1));
+			taskList.add(new Task(i+1,resourceValue.size()));
 		}
 		//initiate the recycle value list
 		for(int i=0;i<resourceValue.size();i++){
@@ -54,9 +53,9 @@ public abstract class ResourceManager {
 		for(Task task:taskList){
 			if(!task.getAbortState()){
 				result.append("Task "+task.getId()
-						+"\t"+task.getTime()
-						+"\t"+task.getWait()
-						+"\t"+((task.getWait()/task.getTime())*100)+"%\n");
+						+"\t"+Math.round(task.getTime())
+						+"\t"+Math.round(task.getWait())
+						+"\t"+Math.round((task.getWait()/task.getTime())*100)+"%\n");
 				this.totalTime+=task.getTime();
 				this.totalWait+=task.getWait();
 			}
@@ -64,9 +63,9 @@ public abstract class ResourceManager {
 				result.append("Task "+task.getId()+"\t"+"aborted\n");
 			}
 		}
-		result.append("total \t"+this.totalTime
-				+"\t"+this.totalWait
-				+"\t"+(this.totalWait/this.totalTime)*100+"%\n");
+		result.append("total \t"+Math.round(this.totalTime)
+				+"\t"+Math.round(this.totalWait)
+				+"\t"+Math.round((this.totalWait/this.totalTime)*100)+"%\n");
 	}
 	
 	public StringBuilder getResult() {

@@ -10,11 +10,14 @@ public class Task {
 	private double percentage;
 	private boolean abortState;
 	
-	public Task(int id){
+	public Task(int id,int resourceType){
 		this.id=id;
 		this.time=0;
 		this.wait=0;
 		this.abortState=false;
+		this.resourceType=resourceType;
+		this.currentAmount=new int[resourceType];
+		this.initialClaim=new int[resourceType];
 	}
 	
 	public Task(int id,int resourceType,int[] currentAmount,int[] initialClaim){
@@ -55,7 +58,7 @@ public class Task {
 		return this.currentAmount[resourceType-1];
 	}
 
-	public void setCurrentAmount(int currentAmount,int resourceType) {
+	public void setCurrentAmount(int resourceType,int currentAmount) {
 		this.currentAmount[resourceType-1] = currentAmount;
 	}
 
@@ -98,6 +101,5 @@ public class Task {
 	public void setAbortState(boolean abortState) {
 		this.abortState = abortState;
 	}
-	
 	
 }

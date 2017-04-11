@@ -29,11 +29,11 @@ public class BankerResourceManager extends ResourceManager{
 		detail.append("During "+cycle+"-"+(++cycle)+"\n");
 		processBlockQueue();
 		processReadyQueue();
-		if(isDeadlock) {
-			for(int i=0;i<resourceValue.size();i++){
-				releaseResource(i);
-			}
-		}
+//		if(isDeadlock) {
+//			for(int i=0;i<resourceValue.size();i++){
+//				releaseResource(i);
+//			}
+//		}
 		recycleResource();
 		return true;
 	}
