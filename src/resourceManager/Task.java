@@ -20,15 +20,6 @@ public class Task {
 		this.initialClaim=new int[resourceType];
 	}
 	
-	public Task(int id,int resourceType,int[] currentAmount,int[] initialClaim){
-		this.id=id;
-		this.resourceType=resourceType;
-		this.currentAmount=currentAmount;
-		this.initialClaim=initialClaim;
-		this.time=0;
-		this.wait=0;
-	}
-	
 	public void run(){
 		this.time++;
 	}

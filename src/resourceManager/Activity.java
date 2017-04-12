@@ -1,27 +1,28 @@
 package resourceManager;
 
 public class Activity {
-	//Activity Type
+	// Activity Type
 	private String activityType;
-	
-	//Task Number
+
+	// Task Number
 	private int taskNumber;
-	
-	//Resource Type or Circle Number
+
+	// Resource Type or Circle Number
 	private int resourceType;
-	
-	//Number
+
+	// Number
 	private int number;
-	
-	public Activity(int taskNumber){
-		this.taskNumber=taskNumber;
+
+	public Activity(int taskNumber) {
+		this.taskNumber = taskNumber;
 	}
-	
-	public Activity(String activityType,int taskNumber,int resourceType,int number){
-		this.activityType=activityType;
-		this.taskNumber=taskNumber;
-		this.resourceType=resourceType;
-		this.number=number;
+
+	public Activity(String activityType, int taskNumber, int resourceType,
+			int number) {
+		this.activityType = activityType;
+		this.taskNumber = taskNumber;
+		this.resourceType = resourceType;
+		this.number = number;
 	}
 
 	public String getActivityType() {
@@ -55,6 +56,5 @@ public class Activity {
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	
-	
+
 }
